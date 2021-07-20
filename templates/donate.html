@@ -16,7 +16,7 @@ Donation
         </div>
         <div class="mb-3">
             <label class="form-label" style="font-size: 18px;font-family: ''Noto Sans JP', sans-serif';
-                font-weight: 600;">Email</label>
+                font-weight: 600;">Email </label>
             <input type="email" name="email" class="form-control" id="exampleInputPassword1">
         </div>
         <label class="form-label" style="font-size: 18px;font-family: ''Noto Sans JP', sans-serif';
@@ -29,9 +29,13 @@ Donation
             <input type="number" name="amount" class="form-control" id="inlineFormInputGroup"> <br>
         </div>
 
-        <button type="submit" class="btn btn-outline-primary btn-sm" style="margin-left: 460px;">
-            Donate
-        </button>
+        <div style="margin-left: 90px; padding-bottom: 50px; padding-top: 0px; margin-top: 25px; ">
+            <button type="submit" class="button" >
+              <span>
+                Donate !
+              </span>
+            </button>
+          </div>
 
         {% if payment %}
         <form action="success" method="POST">
