@@ -25,7 +25,7 @@ SECRET_KEY = 'django-insecure-5gtdnj4%z9*h0aw5+_wxy81scp)&c2#-qo3k%%1o@%7whab8mb
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = False
 
-ALLOWED_HOSTS = ['127.0.0.1','sampledomain']
+ALLOWED_HOSTS = ['127.0.0.1','paymentintegrationrazorpay.herokuapp.com']
 
 
 # Application definition
@@ -133,13 +133,12 @@ EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
 EMAIL_HOST = 'smtp.gmail.com'
 EMAIL_USE_TLS = True
 EMAIL_PORT = 587
-#EMAIL_HOST_USER = 'jeevanchhajed66@gmail.com'
-#EMAIL_HOST_PASSWORD = 'Sunil08@'
 EMAIL_HOST_USER=os.environ['emailid']
 EMAIL_HOST_PASSWORD=os.environ['password']
 
-#KEY_ID="rzp_test_BfsmPHcf38hNpJ"
-#SECRET_KEY="iKlgJsHXQmvoRFGuqkHxp0wq"
 
 KEY_ID=os.environ['keyid']
 SECRET_KEY=os.environ['secretkey']
+
+PROJECT_DIR = os.path.dirname(os.path.abspath(__file__))
+STATIC_ROOT = os.path.join(PROJECT_DIR, 'static')
