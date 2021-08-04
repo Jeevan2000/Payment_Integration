@@ -3,10 +3,45 @@
 success
 {% endblock title %}
 {% block body %}
-    <h5>payment done successfully</h5>
-    <button type="button" class="btn btn-primary">
-        <span>
-          <a href="donate">Donate Again</a>
-        </span>
-    </button>
+<script type="text/javascript">   
+    function Redirect() 
+    {  
+        window.location="http://127.0.0.1:8000"; 
+    } 
+    // document.write("You will be redirected to a new page in 5 seconds"); 
+    setTimeout('Redirect()', 8000);   
+</script>
+<main style="width: 22cm;
+height:11cm;
+background: linear-gradient(to bottom, rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url('../static/back.png');
+background-size: cover;
+background-position: center;
+margin-top: 2cm;
+margin-left: 6cm;
+">
+  <div class="form">
+      <div style=" background: url('../static/success (1).gif');
+      background-size: contain;
+      background-position: center;
+      background-repeat: no-repeat;
+      width: 60%;
+      height: 40vh;
+      margin-top: 2cm;
+      margin-left: 4cm;
+      align-items: center;">
+      </div>
+      <h1 style="color: white; text-align: center;">
+          Payment Successful!
+      </h1>
+
+      <h3 style="color: white; text-align: center;">
+          Thank You for making the world a better place to live in !
+      </h3>
+
+      <h5 style=" color: rgba(252, 162, 17, 0.85);
+      text-align: left; margin-left: 2cm;">Redirecting ... </h5>
+  </div>
+</main>
+
+
 {% endblock body %}

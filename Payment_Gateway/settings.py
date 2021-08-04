@@ -23,9 +23,9 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = 'django-insecure-5gtdnj4%z9*h0aw5+_wxy81scp)&c2#-qo3k%%1o@%7whab8mb'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['127.0.0.1','sampledomain']
 
 
 # Application definition
@@ -42,6 +42,7 @@ INSTALLED_APPS = [
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
+    'whitenoise.middleware.WhiteNoiseMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
     'django.middleware.csrf.CsrfViewMiddleware',
@@ -127,3 +128,18 @@ STATICFILES_DIRS=[
 # https://docs.djangoproject.com/en/3.2/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+
+EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
+EMAIL_HOST = 'smtp.gmail.com'
+EMAIL_USE_TLS = True
+EMAIL_PORT = 587
+#EMAIL_HOST_USER = 'jeevanchhajed66@gmail.com'
+#EMAIL_HOST_PASSWORD = 'Sunil08@'
+EMAIL_HOST_USER=os.environ['emailid']
+EMAIL_HOST_PASSWORD=os.environ['password']
+
+#KEY_ID="rzp_test_BfsmPHcf38hNpJ"
+#SECRET_KEY="iKlgJsHXQmvoRFGuqkHxp0wq"
+
+KEY_ID=os.environ['keyid']
+SECRET_KEY=os.environ['secretkey']
