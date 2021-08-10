@@ -63,7 +63,7 @@ def success(request):
         details['paymentid']=payment_id
         msg_txt= render_to_string('email.txt')
         msg_html=render_to_string('newemail.html',{'details':details})
-       # send_mail("Sparks Foundation : Your Donation was Successful", msg_txt, settings.EMAIL_HOST_USER, [user.email],html_message=msg_html)
+        send_mail("Sparks Foundation : Your Donation was Successful", msg_txt, settings.EMAIL_HOST_USER, [user.email],html_message=msg_html)
         return render(request, 'success.html')
        
        
